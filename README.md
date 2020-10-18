@@ -14,7 +14,7 @@ The project was built and run in Windows environment in Netbeans. The testing wa
 
 ## Setup
 - clone the project
-- create a database called 'Clone' and add tables using commands in the file setup\createTables.txt. The expected port, username, database name and password are available in application.conf file.
+- create a database called 'Clone' and add tables using commands in the files SQL\. The expected port, username, database name and password are available in application.conf file.
 - navigate to application.conf under the project and update the fields (if needed):
   - user
   - password
@@ -83,3 +83,4 @@ Every 31 mins, a scheduled job checks for users whose birthdays are X hours away
 | username    | varchar(255) | email of person who's contact it is |
 +-------------+--------------+-------------------------------------+
 ```
+Note: To add new users for sign in, plesae use the query listed in SQL\'insert in user table'
