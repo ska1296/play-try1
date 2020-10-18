@@ -74,17 +74,6 @@ public class Application extends Controller {
             reminder.setDuration(hours);
             UserDAO.addHours(reminder);
         }
-        
-        try {
-            SimpleEmail email = new SimpleEmail();
-            email.setFrom("ska1296@gmail.com");
-            email.addTo("ska1296@gmail.com");
-            email.setSubject("subject");
-            email.setMsg("Message");
-            Mail.send(email); 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
         render(userName);
         
     }
