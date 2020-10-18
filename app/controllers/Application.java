@@ -4,28 +4,17 @@ import dao.ContactsDAO;
 import dao.UserDAO;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import play.*;
 import play.mvc.*;
 
 import models.*;
-import org.apache.commons.mail.SimpleEmail;
 
 import play.data.validation.*;
-import play.libs.Mail;
+
 
 public class Application extends Controller {
 
     public static void index() {
         render();
-    }
-    
-    
-    public static void sayHello(@Required String userName) {
-        if (validation.hasErrors()) {
-            flash.error("no name found!");
-            index();
-        }
-        render(userName);
     }
     
     public static void login(@Required String userName, @Required String password) throws ParseException {
@@ -40,8 +29,6 @@ public class Application extends Controller {
             flash.error("Fix user credentials");
             index();
         }
-        //insert imto auth table
-        //render the next page with the username
         
         addContacts(userName, true);
     }
