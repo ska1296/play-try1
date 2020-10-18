@@ -1,5 +1,6 @@
 package controllers;
 
+import dao.UserDAO;
 import play.*;
 import play.mvc.*;
 
@@ -14,6 +15,7 @@ public class Application extends Controller {
         render();
     }
     
+    
     public static void sayHello(@Required String userName) {
         if (validation.hasErrors()) {
             flash.error("no name found!");
@@ -27,25 +29,26 @@ public class Application extends Controller {
             flash.error("Fix user credentials");
             index();
         }
-        System.out.println("controllers.Application.login() " + userName + " " + password);
-        //insert imto auth table
-        //render the next page with the username
-        showContacts(userName);
-    }
-    
-    public static void showContacts(String userName) {
         
-        //fetch all contacts for current user
-        render(userName);
-    }
-    
-    public static void addContact(@Required String userName, @Required String birthday) {
-        if (validation.hasErrors()) {
+        UserDAO userDao = new UserDAO();
+        User user = userDao.findUser(userName);
+        if (user == null || !user.getPassword().equals(password)) {
             flash.error("Fix user credentials");
             index();
         }
-        //insert birthday into respective table
-        //insert contact into respective table
+        //insert imto auth table
+        //render the next page with the username
+        
+        addContacts(userName);
+    }
+    
+    public static void addContacts(String userName) {
+        
+        String id = params.get("id");
+        String date = params.get("date");
+        //fetch all contacts for current user
+        render(userName);
+        
     }
 
 }

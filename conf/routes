@@ -4,7 +4,7 @@
 
 # Home page
 GET     /login                                       Application.index
-
+GET    /addContacts                                  Application.addContacts
 
 
 # Ignore favicon requests

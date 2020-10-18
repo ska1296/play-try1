@@ -1,14 +1,16 @@
 package models;
 
-import java.util.*;
 import javax.persistence.*;
+import play.data.validation.Required;
  
 import play.db.jpa.*;
 
 @Entity
 @Table(name="USERS")
-public class User extends Model {
+public class User extends GenericModel {
     
+    @Id
+    @Required
     String userid;
     String password;
 
