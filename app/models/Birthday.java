@@ -1,6 +1,6 @@
 package models;
 
-import java.util.*;
+import java.util.Date;
 import javax.persistence.*;
  
 import play.db.jpa.*;
@@ -9,9 +9,14 @@ import play.db.jpa.*;
 @Table(name="BIRTHDAY")
 public class Birthday extends Model {
     
+    
+    @Column(name = "userid")
     String userid;
-    String birthday;
-
+    
+    @Temporal(value= TemporalType.TIMESTAMP)
+    Date birthday;
+    
+    
     public String getUserid() {
         return userid;
     }
@@ -20,11 +25,11 @@ public class Birthday extends Model {
         this.userid = userid;
     }
 
-    public String getBirthday() {
+    public Date getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(String birthday) {
+    public void setBirthday(Date birthday) {
         this.birthday = birthday;
     }
 

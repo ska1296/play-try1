@@ -1,0 +1,14 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+#{if flash.error}
+    <p style="color:#c00">
+        ${flash.error}
+    </p>
+#{/if}
+
+<form action="@{Application.showContacts()}" method="POST">
+    <input type="text" name="userName" /> 
+    <input type="password" name="password" /> 
+    <input type="submit" value="Sign In!" />
+</form>

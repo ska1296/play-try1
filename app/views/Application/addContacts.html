@@ -6,8 +6,10 @@
 <h1>Hello ${userName ?: 'guest'}!</h1>
 
 <form action="@{Application.addContacts()}" method="GET">
+    <input type="number" name="hours" placeholder="Remind me (hours) before"  value="1" />
+    <br><br>
     <input type="text" name="userName" value=${userName} readonly>
-    <input type="text" name="id" placeholder="contact name"/>
+    <input type="text" name="id" placeholder="contact name" />
     <input type="date" name="date"/> 
     <input type="submit" value="Add Contact!" />
 </form>
