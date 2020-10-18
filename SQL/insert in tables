@@ -1,0 +1,8 @@
+insert into [Clone].[dbo].[USERS] ([userid] ,[password]) values ('asd@abc.com', 'asd');
+INSERT INTO [Clone].[dbo].[REMINDER] ([duration] ,[userid]) VALUES (1 ,'asd@abc.com');
+INSERT INTO [dbo].[CONTACTS] ([contactName] ,[username]) VALUES ('asd', 'asd@abc.com');
+INSERT INTO [dbo].[CONTACTS] ([contactName] ,[username]) VALUES ('das', 'asd@abc.com');
+INSERT INTO [dbo].[CONTACTS] ([contactName] ,[username]) VALUES ('qwe', 'asd@abc.com');
+INSERT INTO [dbo].[BIRTHDAY] ([birthday] ,[userid]) VALUES ('2020-10-30 00:00:00.000', 'asd');
+INSERT INTO [dbo].[BIRTHDAY] ([birthday] ,[userid]) VALUES ('2020-10-24 00:00:00.000', 'das');
+INSERT INTO [dbo].[BIRTHDAY] ([birthday] ,[userid]) VALUES ('2020-10-24 00:00:00.000', 'qwe');

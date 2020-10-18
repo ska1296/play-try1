@@ -1,0 +1,1 @@
+insert into [Clone].[dbo].[USERS] ([userid] ,[password]) values (<email>, <password>);
